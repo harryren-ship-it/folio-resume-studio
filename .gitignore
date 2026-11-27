@@ -1,0 +1,22 @@
+# Keep workspaces, imports, exports, credentials and local overrides off Git.
+data/
+.env*
+*.local.*
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.json
+!web/projects.json
+!web/templates.json
+*.pdf
+*.pptx
+*.docx
+*.png
+*.jpg
+*.jpeg
+*.webp
+!web/builtin/folio-studio.pptx
+!web/samples/plain.png
+!web/samples/plain.pdf
+!web/samples/folio-studio.png

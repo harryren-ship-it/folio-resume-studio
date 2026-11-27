@@ -1,0 +1,33 @@
+\usepackage{xeCJK,needspace}
+\geometry{a4paper,left=18mm,right=18mm,top=17mm,bottom=16mm}
+\setlength{\emergencystretch}{2em}
+\definecolor{Ink}{HTML}{20272A}
+\definecolor{Muted}{HTML}{4B5558}
+\newcommand{\displayface}{\IfFontExistsTF{STZhongsong}{\CJKfontspec{STZhongsong}}{\CJKfontspec{FandolSong-Regular}}}
+\newcommand{\sansface}{\sffamily\IfFontExistsTF{Microsoft YaHei}{\CJKfontspec{Microsoft YaHei}}{\CJKfontspec{FandolHei-Regular}}}
+\newcommand{\detail}[1]{{\sansface\fontsize{9}{13}\selectfont #1}}
+\newcommand{\optionaltext}[2]{\if\relax\detokenize{#1}\relax\else #2\fi}
+\newcommand{\headername}[1]{{\fontsize{35}{40}\selectfont #1\par}}
+\newcommand{\projecttitle}[1]{{\sansface\bfseries\fontsize{11.2}{15}\selectfont #1}}
+\newcommand{\dateline}[1]{{\sffamily\fontsize{8.5}{11}\selectfont\color{Muted}#1}}
+\newcommand{\sectionspace}{17pt plus 1pt minus 2pt}
+\newcommand{\entryspace}{10pt}
+\newcommand{\bodysetup}{\fontsize{11}{17}\selectfont}
+\ifdefined\FolioCompact
+  \renewcommand{\sectionspace}{8pt plus 1pt minus 1pt}
+  \renewcommand{\entryspace}{4pt}
+  \renewcommand{\bodysetup}{\fontsize{10.7}{14.2}\selectfont}
+\fi
+\setlist[itemize]{label=\textcolor{Accent}{\scriptsize\textbullet},leftmargin=1.15em,labelsep=.5em,itemsep=.5pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\newcommand{\sectionstart}{\par\addvspace{\sectionspace}\Needspace{3.5\baselineskip}}
+\newcommand{\nextproject}{\par\addvspace{\entryspace}\Needspace{2.6\baselineskip}}
+\newcommand{\folioProject}[2]{\noindent\projecttitle{#1}\optionaltext{#2}{\hspace{.8em}\hfill\dateline{#2}}\par\nopagebreak}
+\newcommand{\folioCloseProject}{}
+\newsavebox{\projectheadbox}
+\newcommand{\folioFullTitle}[2]{%
+  \sbox{\projectheadbox}{\projecttitle{#1}\optionaltext{#2}{\hspace{.25em}\dateline{（#2）}}}%
+  \noindent\ifdim\wd\projectheadbox>\linewidth
+    \projecttitle{#1}\optionaltext{#2}{\par\nopagebreak\noindent\dateline{（#2）}}%
+  \else\usebox{\projectheadbox}\fi\par\nopagebreak}
+\newcommand{\folioField}[2]{\noindent{\sansface\bfseries\color{Accent}#1：}#2\par}
+\newcommand{\folioCloseSection}{\par}

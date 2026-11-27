@@ -1,0 +1,77 @@
+[
+  {
+    "id": "plain",
+    "name": "松墨 · 通用简历",
+    "audience": "综合申请 · 学业与项目",
+    "assets": [],
+    "sections": [
+      [
+        "education",
+        "教育背景"
+      ],
+      [
+        "projects",
+        "项目经历"
+      ],
+      [
+        "skills",
+        "专业技能"
+      ],
+      [
+        "honors",
+        "竞赛与荣誉"
+      ],
+      [
+        "activities",
+        "学生实践"
+      ],
+      [
+        "languages",
+        "语言能力"
+      ]
+    ]
+  },
+  {
+    "id": "folio-studio",
+    "name": "深海 · 求职简历",
+    "kind": "deck",
+    "audience": "求职实习 · 工程实践",
+    "sections": [
+      [
+        "education",
+        "教育背景"
+      ],
+      [
+        "projects",
+        "项目经历"
+      ],
+      [
+        "skills",
+        "专业技能"
+      ],
+      [
+        "experience",
+        "实践实习"
+      ]
+    ],
+    "headerFields": [
+      "contact",
+      "portrait",
+      "name",
+      "subtitle"
+    ],
+    "usesPortrait": true,
+    "assets": [],
+    "builtin": true,
+    "bindings": {
+      "1:4": "name",
+      "1:5": "subtitle",
+      "1:6": "contact",
+      "1:7": "portrait",
+      "1:11": "education",
+      "1:15": "projects",
+      "1:19": "skills",
+      "1:23": "experience"
+    }
+  }
+]
